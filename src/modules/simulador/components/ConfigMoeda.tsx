@@ -28,26 +28,28 @@ const ConfigMoeda = ({
   cotacaoAPI,
   setCotacaoAPI
 }: Props) => {
-  useEffect(() => {
-    if (moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL') {
-      fetch(`https://api.frankfurter.app/latest?from=${moedaSelecionada}&to=BRL`)
-  .then(res => {
-    if (!res.ok) throw new Error('Falha ao buscar cotação')
-    return res.json()
-  })
-  .then(data => {
-    const taxa = data.rates?.BRL
-    if (taxa) {
-      setCotacaoAPI(parseFloat(taxa).toFixed(2))
-    } else {
-      setCotacaoAPI('1.00')
-      console.error('Resposta inesperada da API:', data)
-    }
-  })
-  .catch((err) => {
-    console.error('Erro ao buscar cotação:', err)
-    setCotacaoAPI('1.00')
-  }, [moedaSelecionada, setCotacaoAPI])
+useEffect(() => {
+  if (moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL') {
+    fetch(`https://api.frankfurter.app/latest?from=${moedaSelecionada}&to=BRL`)
+      .then(res => {
+        if (!res.ok) throw new Error('Falha ao buscar cotação')
+        return res.json()
+      })
+      .then(data => {
+        const taxa = data.rates?.BRL
+        if (taxa) {
+          setCotacaoAPI(parseFloat(taxa).toFixed(2))
+        } else {
+          setCotacaoAPI('1.00')
+          console.error('Resposta inesperada da API:', data)
+        }
+      })
+      .catch((err) => {
+        console.error('Erro ao buscar cotação:', err)
+        setCotacaoAPI('1.00')
+      })
+  }
+}, [moedaSelecionada, setCotacaoAPI])
 
   const formatarValorMonetario = (valor: string) => {
     const apenasNumeros = valor.replace(/\D/g, '')
