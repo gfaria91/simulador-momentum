@@ -1,4 +1,5 @@
 import React from 'react'
+import QuadraAlerta from './QuadraAlerta'
 
 type Props = {
   tipoCliente: string
@@ -59,14 +60,22 @@ const DadosLote = ({
       </select>
 
       <label className="block text-sm mb-1">Quadra</label>
-      <input
-        type="text"
-        value={quadra}
-        onChange={e => handleQuadra(e.target.value.toUpperCase())}
-        className="border rounded px-3 py-2 w-full mb-3"
-        placeholder="Ex: AB"
-      />
-
+      <label className="block font-medium mb-1">Quadra</label>
+  <input
+    type="text"
+    value={quadra}
+    onChange={(e) => {
+      const valor = e.target.value.toUpperCase().replace(/[^A-Z]/g, '')
+      if (valor.length <= 2) setQuadra(valor)
+    }}
+    className="border rounded px-3 py-2 w-full uppercase"
+    placeholder="Ex: AB"
+  />
+  {setor && setor !== 'Setor' ? (
+    <QuadraAlerta quadra={quadra} setor={setor} />
+  ) : (
+    <p className="text-sm text-red-600 mt-1">Selecione um setor para exibir o alerta da quadra.</p>
+  )}
 
       <label className="block text-sm mb-1">Lote</label>
       <input
