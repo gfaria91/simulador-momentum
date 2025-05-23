@@ -6,7 +6,7 @@ type Props = {
   setor: string
 }
 
-const AlertaQuadra = ({ quadra, setor }: Props) => {
+const QuadraAlerta = ({ quadra, setor }: Props) => {
   const [responsavel, setResponsavel] = useState('')
   const [campanha, setCampanha] = useState('')
 
@@ -58,4 +58,4 @@ const AlertaQuadra = ({ quadra, setor }: Props) => {
   )
 }
 
-export default AlertaQuadra
+export default QuadraAlerta
