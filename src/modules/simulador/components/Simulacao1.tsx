@@ -10,34 +10,50 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
   const [valorEntrada, setValorEntrada] = useState('')
   const [prazo, setPrazo] = useState(180)
   const [taxaJuros, setTaxaJuros] = useState('0,33')
+  const [ultimoEditado, setUltimoEditado] = useState<'percentual' | 'valor'>('percentual')
 
   const nomeBloco = tipoCliente === 'CCB' ? 'Pick Money' : 'Momentum - Opção 1'
 
-  const parseValor = (valor: string) => {
-    return parseFloat(valor.replace('.', '').replace(',', '.')) || 0
-  }
-
-  const formatarMonetario = (valor: number) => {
-    return valor.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')
-  }
+  const parseValor = (valor: string) => parseFloat(valor.replace('.', '').replace(',', '.')) || 0
+  const formatarMonetario = (valor: number) => valor.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 
   useEffect(() => {
-    const vl = parseValor(valorLote)
-    const perc = parseValor(entradaPercentual)
-    const entrada = vl * (perc / 100)
-    if (!isNaN(entrada)) {
-      setValorEntrada(formatarMonetario(entrada))
+    if (ultimoEditado === 'percentual') {
+      const vl = parseValor(valorLote)
+      const perc = parseValor(entradaPercentual)
+      const entrada = vl * (perc / 100)
+      if (!isNaN(entrada)) {
+        setValorEntrada(formatarMonetario(entrada))
+      }
     }
-  }, [valorLote, entradaPercentual])
+  }, [entradaPercentual, valorLote])
 
   useEffect(() => {
-    const vl = parseValor(valorLote)
-    const entrada = parseValor(valorEntrada)
-    if (!isNaN(vl) && entrada > 0) {
-      const percentual = (entrada / vl) * 100
-      setEntradaPercentual(formatarMonetario(percentual))
+    if (ultimoEditado === 'valor') {
+      const vl = parseValor(valorLote)
+      const entrada = parseValor(valorEntrada)
+      if (!isNaN(vl) && vl > 0 && entrada > 0) {
+        const percentual = (entrada / vl) * 100
+        setEntradaPercentual(formatarMonetario(percentual))
+      }
     }
-  }, [valorEntrada])
+  }, [valorEntrada, valorLote])
+
+  const handlePercentualChange = (value: string) => {
+    const apenasNumeros = value.replace(/\D/g, '')
+    const numero = (parseInt(apenasNumeros || '0', 10) / 100).toFixed(2)
+    const formatado = numero.replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    setUltimoEditado('percentual')
+    setEntradaPercentual(formatado)
+  }
+
+  const handleValorChange = (value: string) => {
+    const apenasNumeros = value.replace(/\D/g, '')
+    const numero = (parseInt(apenasNumeros || '0', 10) / 100).toFixed(2)
+    const formatado = numero.replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    setUltimoEditado('valor')
+    setValorEntrada(formatado)
+  }
 
   return (
     <section className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
@@ -50,7 +66,7 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
             <input
               type="text"
               value={entradaPercentual}
-              onChange={(e) => setEntradaPercentual(e.target.value)}
+              onChange={(e) => handlePercentualChange(e.target.value)}
               className="border rounded px-3 py-2 w-full"
             />
             <span className="ml-2 font-semibold">%</span>
@@ -62,7 +78,7 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
           <input
             type="text"
             value={valorEntrada}
-            onChange={(e) => setValorEntrada(e.target.value)}
+            onChange={(e) => handleValorChange(e.target.value)}
             className="border rounded px-3 py-2 w-full"
           />
         </div>
@@ -74,7 +90,7 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
             onChange={(e) => setPrazo(parseInt(e.target.value))}
             className="border rounded px-3 py-2 w-full"
           >
-            {[...Array(180)].map((_, i) => 180 - i).filter(m => [1, 2, 6, 12, 24, 36, 48, 180].includes(m)).map(m => (
+            {[180, 48, 36, 24, 12, 6, 2, 1].map(m => (
               <option key={m} value={m}>{m}</option>
             ))}
           </select>
