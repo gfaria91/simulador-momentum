@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ConfigMoeda from './ConfigMoeda'
 import DadosLote from './DadosLote'
-import QuadraAlerta from './QuadraAlerta'
+import TaxasAdicionais from './TaxasAdicionais'
 
 const FormularioSimulacao = () => {
 const [tipoCliente, setTipoCliente] = useState('CCB')
@@ -45,7 +45,7 @@ const [cotacaoAPI, setCotacaoAPI] = useState('1.00')
   setValorLote={setValorLote}
 />
 
-<QuadraAlerta quadra={quadra} setor={setor} />
+<TaxasAdicionais />
 
       <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
