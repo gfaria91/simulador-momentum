@@ -1,5 +1,7 @@
 import React from 'react'
 import QuadraAlerta from './QuadraAlerta'
+import ValorMetroQuadrado from './ValorMetroQuadrado'
+
 
 type Props = {
   tipoCliente: string
@@ -100,14 +102,14 @@ const DadosLote = ({
         </label>
       </div>
 
-      <label className="block text-sm mb-1">Valor do Lote (R$)</label>
-      <input
-        type="text"
-        value={valorLote}
-        onChange={e => handleValor(e.target.value, setValorLote)}
-        className="border rounded px-3 py-2 w-full"
-        placeholder="Ex: 150.000,00"
-      />
+      
+
+      <ValorMetroQuadrado
+  valorLote={valorLote}
+  setValorLote={setValorLote}
+  tamanho={tamanho}
+  setTamanho={setTamanho}
+/>
     </section>
   )
 }
