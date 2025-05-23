@@ -3,9 +3,6 @@ import ConfigMoeda from './ConfigMoeda'
 import DadosLote from './DadosLote'
 import QuadraAlerta from './QuadraAlerta'
 
-console.log('🔎 QuadraAlerta importado:', QuadraAlerta)
-
-
 const FormularioSimulacao = () => {
 const [tipoCliente, setTipoCliente] = useState('CCB')
 const [setor, setSetor] = useState('Setor')
@@ -47,6 +44,7 @@ const [cotacaoAPI, setCotacaoAPI] = useState('1.00')
   valorLote={valorLote}
   setValorLote={setValorLote}
 />
+<QuadraAlerta quadra={quadra} setor={setor} />
 
       <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
