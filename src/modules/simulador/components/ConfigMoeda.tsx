@@ -47,8 +47,6 @@ const ConfigMoeda = ({
   .catch((err) => {
     console.error('Erro ao buscar cotação:', err)
     setCotacaoAPI('1.00')
-  })
-
   }, [moedaSelecionada, setCotacaoAPI])
 
   const formatarValorMonetario = (valor: string) => {
