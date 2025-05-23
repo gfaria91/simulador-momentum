@@ -49,7 +49,7 @@ const ConfigMoeda = ({
     setCotacaoAPI('1.00')
   })
 
-  }, [moedaSelecionada, setCotacaoAPI])
+  } [moedaSelecionada, setCotacaoAPI])
 
   const formatarValorMonetario = (valor: string) => {
     const apenasNumeros = valor.replace(/\D/g, '')
