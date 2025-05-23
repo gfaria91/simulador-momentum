@@ -66,6 +66,8 @@ const DadosLote = ({
         className="border rounded px-3 py-2 w-full mb-3"
         placeholder="Ex: AB"
       />
+      <AlertaQuadra quadra={quadra} setor={setor} />
+
 
       <label className="block text-sm mb-1">Lote</label>
       <input

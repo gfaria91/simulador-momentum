@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ConfigMoeda from './ConfigMoeda'
 import DadosLote from './DadosLote'
+import AlertaQuadra from './AlertaQuadra'
 
 
 const FormularioSimulacao = () => {
