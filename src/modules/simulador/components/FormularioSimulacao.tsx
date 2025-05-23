@@ -4,6 +4,7 @@ import DadosLote from './DadosLote'
 import AlertaQuadra from './AlertaQuadra'
 
 
+
 const FormularioSimulacao = () => {
 const [tipoCliente, setTipoCliente] = useState('CCB')
 const [setor, setSetor] = useState('Setor')
