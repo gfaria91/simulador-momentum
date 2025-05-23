@@ -55,6 +55,8 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
     setValorEntrada(formatado)
   }
 
+  const prazos = [1, 2, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168, 174, 180]
+
   return (
     <section className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
       <h3 className="text-lg font-semibold mb-2">{nomeBloco}</h3>
@@ -62,14 +64,14 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-1">Entrada (%)</label>
-          <div className="flex items-center">
+          <div className="relative">
             <input
               type="text"
               value={entradaPercentual}
               onChange={(e) => handlePercentualChange(e.target.value)}
-              className="border rounded px-3 py-2 w-full"
+              className="border rounded px-3 py-2 w-full pr-10"
             />
-            <span className="ml-2 font-semibold">%</span>
+            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 font-semibold">%</span>
           </div>
         </div>
 
@@ -90,7 +92,7 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
             onChange={(e) => setPrazo(parseInt(e.target.value))}
             className="border rounded px-3 py-2 w-full"
           >
-            {[180, 48, 36, 24, 12, 6, 2, 1].map(m => (
+            {prazos.map(m => (
               <option key={m} value={m}>{m}</option>
             ))}
           </select>
