@@ -29,27 +29,16 @@ const ConfigMoeda = ({
   setCotacaoAPI
 }: Props) => {
   useEffect(() => {
-    if (moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL') {
-      fetch(`https://api.exchangerate.host/latest?base=${moedaSelecionada}&symbols=BRL`)
-        .then(res => res.json())
-        .then(data => {
-          const taxa = data.rates?.['BRL'] ?? '1.00'
-          setCotacaoAPI(parseFloat(taxa).toFixed(2))
-        })
-        .catch(() => setCotacaoAPI('1.00'))
-    }
-  }, [moedaSelecionada, setCotacaoAPI])
-
-  const formatarValorMonetario = (valor: string) => {
-    const apenasNumeros = valor.replace(/\D/g, '')
-    const numero = (parseInt(apenasNumeros || '0', 10) / 100).toFixed(2)
-    return numero.replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+  if (moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL') {
+    fetch(`https://api.exchangerate.host/latest?base=${moedaSelecionada}&symbols=BRL`)
+      .then(res => res.json())
+      .then(data => {
+        const taxa = data.rates?.['BRL'] ?? '1.00'
+        setCotacaoAPI(parseFloat(taxa).toFixed(2))
+      })
   }
+}, [moedaSelecionada, setCotacaoAPI])
 
-  const handleCotacaoManual = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const valorFormatado = formatarValorMonetario(e.target.value)
-    setCotacaoManual(valorFormatado)
-  }
 
   return (
     <section className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
@@ -67,25 +56,26 @@ const ConfigMoeda = ({
 
       {moedaSelecionada === 'MANUAL' && (
         <div className="mt-3">
-          <label className="block text-sm mb-1">Cotação personalizada (1 unidade = ? BRL)</label>
+          <label className="block text-sm mb-1">Cotação personalizada (1 BRL = ?)</label>
           <input
             type="text"
-            placeholder="Ex: 5,20"
+            placeholder="Ex: 0,19"
             value={cotacaoManual}
-            onChange={handleCotacaoManual}
+            onChange={(e) => setCotacaoManual(e.target.value)}
             className="border rounded px-3 py-2 w-full"
           />
         </div>
       )}
 
-      {moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL' && (
-        <p className="text-sm mt-2 text-gray-600 italic">
-          Cotação atual: <strong>1 {moedaSelecionada} = {parseFloat(cotacaoAPI).toLocaleString('pt-BR', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-          })} BRL</strong>
-        </p>
-      )}
+{moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL' && (
+  <p className="text-sm mt-2 text-gray-600 italic">
+    Cotação atual: <strong>1 {moedaSelecionada} = {parseFloat(cotacaoAPI).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })} BRL</strong>
+  </p>
+)}
+
     </section>
   )
 }
