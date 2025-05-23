@@ -18,14 +18,7 @@ const [cotacaoAPI, setCotacaoAPI] = useState('1.00')
   return (
     <div className="bg-white p-6 rounded shadow-md">
       <h2 className="text-xl font-semibold mb-4">Formulário de Simulação</h2>
-      <ConfigMoeda
-  moedaSelecionada={moedaSelecionada}
-  setMoedaSelecionada={setMoedaSelecionada}
-  cotacaoManual={cotacaoManual}
-  setCotacaoManual={setCotacaoManual}
-  cotacaoAPI={cotacaoAPI}
-  setCotacaoAPI={setCotacaoAPI}
-/>
+
 <ConfigMoeda
   moedaSelecionada={moedaSelecionada}
   setMoedaSelecionada={setMoedaSelecionada}
