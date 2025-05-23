@@ -58,7 +58,7 @@ const DadosLote = ({
         <option value="Iate">Iate</option>
       </select>
 
-      <label className="block text-sm mb-1">Quadra (2 LETRAS)</label>
+      <label className="block text-sm mb-1">Quadra</label>
       <input
         type="text"
         value={quadra}
@@ -66,7 +66,6 @@ const DadosLote = ({
         className="border rounded px-3 py-2 w-full mb-3"
         placeholder="Ex: AB"
       />
-      <AlertaQuadra quadra={quadra} setor={setor} />
 
 
       <label className="block text-sm mb-1">Lote</label>
