@@ -55,7 +55,7 @@ const Simulacao1 = ({ tipoCliente, valorLote }: Props) => {
     setValorEntrada(formatado)
   }
 
-  const prazos = [1, 2, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168, 174, 180]
+  const prazos = [180, 174, 168, 162, 156, 150, 144, 138, 132, 126, 120, 114, 108, 102, 96, 90, 84, 78, 72, 66, 60, 54, 48, 42, 36, 30, 24, 18, 12, 6, 2, 1]
 
   return (
     <section className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
