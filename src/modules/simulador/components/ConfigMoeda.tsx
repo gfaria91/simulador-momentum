@@ -36,7 +36,7 @@ const ConfigMoeda = ({
     return res.json()
   })
   .then(data => {
-    const taxa = data.rates?.['BRL']
+    const taxa = data.rates?.BRL
     if (taxa) {
       setCotacaoAPI(parseFloat(taxa).toFixed(2))
     } else {
