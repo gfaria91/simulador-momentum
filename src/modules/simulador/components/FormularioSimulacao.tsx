@@ -3,6 +3,7 @@ import ConfigMoeda from './ConfigMoeda'
 import DadosLote from './DadosLote'
 import AlertaQuadra from './AlertaQuadra'
 
+console.log('🔎 AlertaQuadra importado:', AlertaQuadra)
 
 
 const FormularioSimulacao = () => {
