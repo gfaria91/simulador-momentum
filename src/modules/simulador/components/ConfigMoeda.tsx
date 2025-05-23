@@ -29,18 +29,19 @@ const ConfigMoeda = ({
   setCotacaoAPI
 }: Props) => {
   useEffect(() => {
-    if (moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL') {
-      fetch(`https://api.exchangerate.host/latest?base=BRL&symbols=${moedaSelecionada}`)
-        .then(res => res.json())
-        .then(data => {
-          const taxa = data.rates?.[moedaSelecionada] ?? '1.00'
-          setCotacaoAPI(parseFloat(taxa).toFixed(2))
-        })
-    }
-  }, [moedaSelecionada, setCotacaoAPI])
+  if (moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL') {
+    fetch(`https://api.exchangerate.host/latest?base=${moedaSelecionada}&symbols=BRL`)
+      .then(res => res.json())
+      .then(data => {
+        const taxa = data.rates?.['BRL'] ?? '1.00'
+        setCotacaoAPI(parseFloat(taxa).toFixed(2))
+      })
+  }
+}, [moedaSelecionada, setCotacaoAPI])
+
 
   return (
-    <section className="mb-6">
+    <section className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
       <h3 className="text-lg font-semibold mb-2">Configuração da Moeda</h3>
       <label className="block text-sm mb-1">Moeda para Visualização (Impressão/Cliente)</label>
       <select
@@ -66,11 +67,15 @@ const ConfigMoeda = ({
         </div>
       )}
 
-      {moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL' && (
-        <p className="text-sm mt-2 text-gray-600 italic">
-          Cotação atual: <strong>1 BRL = {cotacaoAPI} {moedaSelecionada}</strong>
-        </p>
-      )}
+{moedaSelecionada !== 'BRL' && moedaSelecionada !== 'MANUAL' && (
+  <p className="text-sm mt-2 text-gray-600 italic">
+    Cotação atual: <strong>1 {moedaSelecionada} = {parseFloat(cotacaoAPI).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })} BRL</strong>
+  </p>
+)}
+
     </section>
   )
 }
