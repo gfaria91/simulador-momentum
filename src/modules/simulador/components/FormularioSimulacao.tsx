@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
 import ConfigMoeda from './ConfigMoeda'
-
+import DadosLote from './DadosLote'
 
 
 const FormularioSimulacao = () => {
+const [tipoCliente, setTipoCliente] = useState('CCB')
+const [setor, setSetor] = useState('Setor')
+const [quadra, setQuadra] = useState('')
+const [lote, setLote] = useState('')
+const [tamanho, setTamanho] = useState('')
+const [mostrarEmPes, setMostrarEmPes] = useState(false)
+const [valorLote, setValorLote] = useState('')
 const [moedaSelecionada, setMoedaSelecionada] = useState('BRL')
 const [cotacaoManual, setCotacaoManual] = useState('')
 const [cotacaoAPI, setCotacaoAPI] = useState('1.00')
@@ -18,6 +25,31 @@ const [cotacaoAPI, setCotacaoAPI] = useState('1.00')
   setCotacaoManual={setCotacaoManual}
   cotacaoAPI={cotacaoAPI}
   setCotacaoAPI={setCotacaoAPI}
+/>
+<ConfigMoeda
+  moedaSelecionada={moedaSelecionada}
+  setMoedaSelecionada={setMoedaSelecionada}
+  cotacaoManual={cotacaoManual}
+  setCotacaoManual={setCotacaoManual}
+  cotacaoAPI={cotacaoAPI}
+  setCotacaoAPI={setCotacaoAPI}
+/>
+
+<DadosLote
+  tipoCliente={tipoCliente}
+  setTipoCliente={setTipoCliente}
+  setor={setor}
+  setSetor={setSetor}
+  quadra={quadra}
+  setQuadra={setQuadra}
+  lote={lote}
+  setLote={setLote}
+  tamanho={tamanho}
+  setTamanho={setTamanho}
+  mostrarEmPes={mostrarEmPes}
+  setMostrarEmPes={setMostrarEmPes}
+  valorLote={valorLote}
+  setValorLote={setValorLote}
 />
 
       <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
