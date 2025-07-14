@@ -1,0 +1,88 @@
+{
+  "simulation": {
+    "title": "SIMULACIÓN DE FINANCIAMIENTO",
+    "lotData": "Datos del Lote",
+    "sectorDesktop": "Sector/Cuadra/Lote:",
+    "sectorMobile": "Sec/Cd/Lt:",
+    "size": "Tamaño:",
+    "value": "Valor:",
+    "condo": "Cuota de Condominio:",
+    "downPayment": "Entrada",
+    "interestRate": "Tasa de Interés",
+    "term": "Plazo",
+    "installmentValue": "Valor de la Cuota:",
+    "installmentPlusCondo": "Cuota + Condominio:",
+    "simulationDate": "Fecha de Simulación:",
+    "importantNotes": "Observaciones Importantes:",
+    "note1": "Esta es una simulación y los valores pueden sufrir cambios sin aviso previo.",
+    "note2": "La aprobación del financiamiento está sujeta a la comprobación de ingresos.",
+    "backToEdit": "← Volver a Editar",
+    "saveImage": "Guardar Imagen de Simulación",
+    "printPdf": "Imprimir / Guardar PDF",
+    "campaignDetails": {
+      "casaPronta": "Detalles de la Campaña \"Casa Lista, Terreno Liquidado\"",
+      "pontualidade": "Detalles de la Campaña \"Bonificación por Pago Puntual\"",
+      "cinquentaPorcento": "Campaña del 50%"
+    },
+    "campaigns": {
+      "casaPronta": "Casa Lista, Terreno Liquidado",
+      "pontualidade": "Bonificación por Pago Puntual"
+    },
+    "momentum": "MOMENTUM",
+    "pickMoney": "PICK MONEY",
+    "exchangeRate": "Tipo de Cambio:",
+    "exchangeDisclaimer": "Los valores presentados en *** son una estimación basada en el tipo de cambio informado en el momento de la simulación y pueden variar. La transacción final siempre se procesará en Reales Brasileños (BRL).",
+    "months": "meses",
+    "monthly": "m.a."
+  },
+  "campaigns": {
+    "casaPronta": {
+      "title": "Casa Lista, Terreno Liquidado",
+      "originalValue": "Valor Original del Terreno:",
+      "igmpRate": "Tasa IGPM Anual (%) para Campaña",
+      "igmpDefault": "Por defecto: 0%. Este IGPM se usa solo para esta simulación de campaña.",
+      "finalCost": "Costo Final:",
+      "balancePaid": "Saldo Liquidado:",
+      "discount": "Descuento:",
+      "resultsPlaceholder": "Los resultados de la simulación de la campaña aparecerán aquí.",
+      "saveImage": "Guardar Imagen de Campaña",
+      "disclaimer": "Simulación Casa Lista, Terreno Liquidado. Valores sujetos a cambio y verificación de ingresos.",
+      "yearLabel": "año",
+      "yearsLabel": "años",
+      "homeReadyIn": "Casa Lista en",
+      "ofFinancing": "de financiamiento"
+    },
+    "pontualidade": {
+      "title": "Bonificación por Pago Puntual",
+      "igmpRate": "Tasa IGPM Anual (%) para Campaña",
+      "igmpDefault": "Por defecto: 0%. Este IGPM se usa solo para esta simulación de campaña.",
+      "originalTerm": "Plazo Original:",
+      "paidOnTime": "Cuotas Pagadas a Tiempo:",
+      "finalCost": "Costo Final del Terreno:",
+      "amountWaived": "Monto Condonado:",
+      "discount": "Descuento:",
+      "saveImage": "Guardar Imagen de Campaña",
+      "disclaimer": "Simulación Bonificación por Pago Puntual. Valores sujetos a cambio y verificación de ingresos.",
+      "months": "meses"
+    },
+    "cinquentaPorcento": {
+      "title": "Campaña del 50%",
+      "originalValue": "Valor Original del Terreno:",
+      "igmpRate": "Tasa IGPM Anual (%) para Campaña",
+      "igmpDefault": "Por defecto: 0%. Este IGPM se usa solo para esta simulación de campaña.",
+      "downPayment": "Entrada (50%):",
+      "financedAmount": "Monto Financiado (50%):",
+      "installmentValue": "Valor de la Cuota:",
+      "totalSavings": "Ahorro Total:",
+      "saveImage": "Guardar Imagen de Campaña",
+      "disclaimer": "Simulación Campaña del 50%. Valores sujetos a cambio y verificación de ingresos."
+    }
+  },
+  "language": {
+    "selector": "Idioma:",
+    "portuguese": "Portugués",
+    "english": "Inglés",
+    "spanish": "Español"
+  }
+}
+

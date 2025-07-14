@@ -1,0 +1,88 @@
+{
+  "simulation": {
+    "title": "SIMULAÇÃO DE FINANCIAMENTO",
+    "lotData": "Dados do Lote",
+    "sectorDesktop": "Setor/Quadra/Lote:",
+    "sectorMobile": "Setor/Qd/Lt:",
+    "size": "Tamanho:",
+    "value": "Valor:",
+    "condo": "Condomínio:",
+    "downPayment": "Entrada",
+    "interestRate": "Taxa de Juros",
+    "term": "Prazo",
+    "installmentValue": "Valor da Parcela:",
+    "installmentPlusCondo": "Parcela + Condomínio:",
+    "simulationDate": "Data da Simulação:",
+    "importantNotes": "Observações Importantes:",
+    "note1": "Esta é uma simulação e os valores podem sofrer alterações sem aviso prévio.",
+    "note2": "A aprovação do financiamento está sujeita à comprovação de renda.",
+    "backToEdit": "← Voltar para Editar",
+    "saveImage": "Salvar Imagem da Simulação",
+    "printPdf": "Imprimir / Salvar PDF",
+    "campaignDetails": {
+      "casaPronta": "Detalhes da Campanha \"Casa Pronta, Lote Quitado\"",
+      "pontualidade": "Detalhes da Campanha \"Pontualidade Premiada\"",
+      "cinquentaPorcento": "Campanha de 50%"
+    },
+    "campaigns": {
+      "casaPronta": "Casa Pronta, Lote Quitado",
+      "pontualidade": "Pontualidade Premiada"
+    },
+    "momentum": "MOMENTUM",
+    "pickMoney": "PICK MONEY",
+    "exchangeRate": "Taxa de Câmbio:",
+    "exchangeDisclaimer": "Os valores apresentados em *** são uma estimativa baseada na taxa de câmbio informada no momento da simulação e podem variar. A transação final será sempre processada em Reais (BRL).",
+    "months": "meses",
+    "monthly": "a.m."
+  },
+  "campaigns": {
+    "casaPronta": {
+      "title": "Casa Pronta, Lote Quitado",
+      "originalValue": "Valor Original do Lote:",
+      "igmpRate": "Taxa IGPM Anual (%) para Campanha",
+      "igmpDefault": "Padrão: 0%. Este IGPM é usado apenas para esta simulação da campanha.",
+      "finalCost": "Custo Final:",
+      "balancePaid": "Saldo Quitado:",
+      "discount": "Desconto:",
+      "resultsPlaceholder": "Resultados da simulação da campanha aparecerão aqui.",
+      "saveImage": "Salvar Imagem da Campanha",
+      "disclaimer": "Simulação Casa Pronta, Lote Quitado. Valores sujeitos a alteração e comprovação de renda.",
+      "yearLabel": "ano",
+      "yearsLabel": "anos",
+      "homeReadyIn": "Casa Pronta em",
+      "ofFinancing": "de financiamento"
+    },
+    "pontualidade": {
+      "title": "Pontualidade Premiada",
+      "igmpRate": "Taxa IGPM Anual (%) para Campanha",
+      "igmpDefault": "Padrão: 0%. Este IGPM é usado apenas para esta simulação da campanha.",
+      "originalTerm": "Prazo Original:",
+      "paidOnTime": "Parcelas Pagas em Dia:",
+      "finalCost": "Custo Final do Lote:",
+      "amountWaived": "Valor Abonado:",
+      "discount": "Desconto:",
+      "saveImage": "Salvar Imagem da Campanha",
+      "disclaimer": "Simulação Pontualidade Premiada. Valores sujeitos a alteração e comprovação de renda.",
+      "months": "meses"
+    },
+    "cinquentaPorcento": {
+      "title": "Campanha de 50%",
+      "originalValue": "Valor Original do Lote:",
+      "igmpRate": "Taxa IGPM Anual (%) para Campanha",
+      "igmpDefault": "Padrão: 0%. Este IGPM é usado apenas para esta simulação da campanha.",
+      "downPayment": "Entrada (50%):",
+      "financedAmount": "Valor Financiado (50%):",
+      "installmentValue": "Valor da Parcela:",
+      "totalSavings": "Economia Total:",
+      "saveImage": "Salvar Imagem da Campanha",
+      "disclaimer": "Simulação Campanha de 50%. Valores sujeitos a alteração e comprovação de renda."
+    }
+  },
+  "language": {
+    "selector": "Idioma:",
+    "portuguese": "Português",
+    "english": "Inglês", 
+    "spanish": "Espanhol"
+  }
+}
+

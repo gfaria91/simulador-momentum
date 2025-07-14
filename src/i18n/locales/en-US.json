@@ -1,0 +1,87 @@
+{
+  "simulation": {
+    "title": "FINANCING SIMULATION",
+    "lotData": "Lot Information",
+    "sectorDesktop": "Sector/Block/Lot:",
+    "sectorMobile": "Sec/Blk/Lt:",
+    "size": "Size:",
+    "value": "Value:",
+    "condo": "HOA Fee:",
+    "downPayment": "Down Payment",
+    "interestRate": "Interest Rate",
+    "term": "Term",
+    "installmentValue": "Installment Value:",
+    "installmentPlusCondo": "Installment + HOA Fee:",
+    "simulationDate": "Simulation Date:",
+    "importantNotes": "Important Notes:",
+    "note1": "This is a simulation and values may change without prior notice.",
+    "note2": "Financing approval is subject to income verification.",
+    "backToEdit": "← Back to Edit",
+    "saveImage": "Save Simulation Image",
+    "printPdf": "Print / Save PDF",
+    "campaignDetails": {
+      "casaPronta": "\"Home Completed, Land Balance Waived\" Campaign Details",
+      "pontualidade": "\"Timely Payment Reward\" Campaign Details",
+      "cinquentaPorcento": "50% Campaign"
+    },
+    "campaigns": {
+      "casaPronta": "Home Completed, Land Balance Waived",
+      "pontualidade": "Timely Payment Reward"
+    },
+    "momentum": "MOMENTUM",
+    "pickMoney": "PICK MONEY",
+    "exchangeRate": "Exchange Rate:",
+    "exchangeDisclaimer": "The values presented in *** are an estimate based on the exchange rate informed at the time of simulation and may vary. The final transaction will always be processed in Brazilian Reais (BRL).",
+    "months": "months",
+    "monthly": "p.m."
+  },
+  "campaigns": {
+    "casaPronta": {
+      "title": "Home Completed, Land Balance Waived",
+      "originalValue": "Original Land Value:",
+      "igmpRate": "Annual IGPM Rate (%) for Campaign",
+      "igmpDefault": "Default: 0%. This IGPM is used only for this campaign simulation.",
+      "finalCost": "Final Cost:",
+      "balancePaid": "Balance Waived:",
+      "discount": "Discount:",
+      "resultsPlaceholder": "Campaign simulation results will appear here.",
+      "saveImage": "Save Campaign Image",
+      "disclaimer": "Home Completed, Land Balance Waived simulation. Values subject to change and income verification.",
+      "yearLabel": "year",
+      "yearsLabel": "years",
+      "homeReadyIn": "Home Completed in",
+      "ofFinancing": "of financing"
+    },
+    "pontualidade": {
+      "title": "Timely Payment Reward",
+      "igmpRate": "Annual IGPM Rate (%) for Campaign",
+      "igmpDefault": "Default: 0%. This IGPM is used only for this campaign simulation.",
+      "originalTerm": "Original Term:",
+      "paidOnTime": "Payments Made On Time:",
+      "finalCost": "Final Land Cost:",
+      "amountWaived": "Amount Waived:",
+      "discount": "Discount:",
+      "saveImage": "Save Campaign Image",
+      "disclaimer": "Timely Payment Reward simulation. Values subject to change and income verification.",
+      "months": "months"
+    },
+    "cinquentaPorcento": {
+      "title": "50% Campaign",
+      "originalValue": "Original Land Value:",
+      "igmpRate": "Annual IGPM Rate (%) for Campaign",
+      "igmpDefault": "Default: 0%. This IGPM is used only for this campaign simulation.",
+      "downPayment": "Down Payment (50%):",
+      "financedAmount": "Financed Amount (50%):",
+      "installmentValue": "Installment Value:",
+      "totalSavings": "Total Savings:",
+      "saveImage": "Save Campaign Image",
+      "disclaimer": "50% Campaign simulation. Values subject to change and income verification."
+    }
+  }, "language": {
+    "selector": "Language:",
+    "portuguese": "Portuguese",
+    "english": "English",
+    "spanish": "Spanish"
+  }
+}
+
